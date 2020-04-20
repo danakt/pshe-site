@@ -196,6 +196,7 @@ section.main-wrapper {
   transition: 0.3s ease-out;
   transition-property: opacity, visibility, transform;
   line-height: 21px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
 }
 
 .copied-hint::before {
