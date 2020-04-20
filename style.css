@@ -1,12 +1,25 @@
 :root {
   --bg-color: #151515;
   --text-color: #fff;
+  --link-color: #fff;
   --code-bg-color: #000;
   --terminal-header-color: #e0e8f0;
+  --terminal-bg-color: #000;
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
     'Droid Sans', 'Helvetica Neue', sans-serif;
   --font-mono: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
     monospace;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #fff;
+    --text-color: #151515;
+    --link-color: #151515;
+    --code-bg-color: #f9f9f9;
+    --terminal-header-color: #e0e8f0;
+    --terminal-bg-color: #fff;
+  }
 }
 
 * {
@@ -26,13 +39,49 @@ body {
   color: var(--text-color);
 }
 
+a {
+  color: var(--text-color);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 code {
   font-family: var(--font-mono);
   font-size: 16px;
 }
 
-.main-wrapper {
+main {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  flex: 0 0 auto;
+  height: 65px;
+}
+
+.row {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.footer-wrapper {
+  display: flex;
+}
+
+.copyright {
+  flex: 1 1 auto;
+  text-align: right;
+  opacity: 0.3;
+}
+
+section.main-wrapper {
+  flex: 1 1 auto;
   width: 100%;
   display: flex;
   align-items: center;
@@ -40,14 +89,12 @@ code {
 }
 
 @media screen and (max-width: 1000px) {
-  .main-wrapper {
+  section.main-wrapper {
     display: block;
-    margin: 10px;
   }
 }
 
 .main-block {
-  width: 1000px;
   display: flex;
 }
 
@@ -58,14 +105,20 @@ code {
 }
 
 .main-left {
-  margin: 20px;
   flex: 0 0 50%;
   margin-right: 50px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .main-left {
+    text-align: center;
+  }
 }
 
 .main-right {
-  margin: 20px;
   flex: 0 0 50%;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -92,6 +145,9 @@ code {
 
 .installation-wrapper {
   display: inline-block;
+}
+
+@media screen and (max-width: 1000px) {
 }
 
 .installation {
@@ -129,7 +185,7 @@ code {
 
 .copied-hint {
   position: absolute;
-  background-color: var(--code-bg-color);
+  background-color: var(--terminal-bg-color);
   left: calc(100% + 15px);
   padding: 10px 5px;
   top: 50%;
@@ -152,7 +208,7 @@ code {
   transform: translateY(-50%);
   border-style: solid;
   border-width: 7px 8px 7px 0;
-  border-color: transparent var(--code-bg-color) transparent transparent;
+  border-color: transparent var(--terminal-bg-color) transparent transparent;
 }
 
 .copied-hint.showed {
@@ -166,7 +222,7 @@ code {
   max-width: 600px;
   margin: 0 auto;
   height: 300px;
-  background: var(--code-bg-color);
+  background: var(--terminal-bg-color);
   border-radius: 10px;
   position: relative;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);

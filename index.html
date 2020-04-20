@@ -9,72 +9,111 @@
 </head>
 
 <body>
-  <div class="main-wrapper">
-    <div class="main-block">
-      <div class="main-left">
-        <h1 class="tagline">Быстро. Удобно.&nbsp;Пше.</h1>
-        <p class="description">Добейтесь максимальной производительности вместе с <strong>пше</strong>.
-          Передовые технологии ведущих разработчиков для удобной и сверхбыстрой разработки.</p>
+  <main>
+    <section class="main-wrapper">
+      <div class="row">
+        <div class="main-block">
+          <div class="main-left">
+            <h1 class="tagline">Быстро. Удобно.&nbsp;Пше.</h1>
+            <p class="description">Добейтесь максимальной производительности вместе с <strong>пше</strong>.
+              Передовые технологии ведущих разработчиков для удобной и сверхбыстрой разработки.</p>
 
-        <div class="installation-wrapper">
-          <div class="installation">
-            <code>yarn global add @danakt/pshe</code>
+            <div class="installation-wrapper">
+              <div class="installation">
+                <code>yarn global add @danakt/pshe</code>
 
-            <div class="copy-button" onclick="copyInstallationCode()">
-              <svg viewBox="0 0 28 28" style="display: block;">
-                <use xlink:href="#copy" style="fill: currentcolor;"></use>
-              </svg>
+                <div class="copy-button" onclick="copyInstallationCode()">
+                  <svg viewBox="0 0 28 28" style="display: block;">
+                    <use xlink:href="#copy" style="fill: currentcolor;"></use>
+                  </svg>
+                </div>
+
+                <div class="copied-hint">👌</div>
+              </div>
             </div>
+          </div>
 
-            <div class="copied-hint">👌</div>
+          <div class="main-right">
+            <div class="terminal-window">
+              <header>
+                <div class="button green"></div>
+                <div class="button red"></div>
+                <div class="button yellow"></div>
+              </header>
+
+              <section class="terminal">
+                <div class="first-prompt">
+                  $&nbsp;<span class="promt" data-text="пше сщььше -ь Эштшешфд сщььшеЭ"></span><span
+                    class="typing-cursor">|</span>
+                </div>
+
+                <div class="output">
+                  <div>$ git commit -m "initial commit"</div>
+                  <div>&nbsp;</div>
+                  <div>On branch master</div>
+                  <div>Your branch is up to date with 'origin/master'.</div>
+                  <div>&nbsp;</div>
+                  <div>nothing to commit, working tree clean</div>
+                </div>
+
+                <div class="second-prompt">
+                  $&nbsp;<span class="promt"></span><span class="typing-cursor">|</span>
+                </div>
+              </section>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="main-right">
-        <div class="terminal-window">
-          <header>
-            <div class="button green"></div>
-            <div class="button red"></div>
-            <div class="button yellow"></div>
-          </header>
+    <footer>
+      <div class="row">
+        <div class="footer-wrapper">
+          <div>
+            <a class="github-button" href="https://github.com/danakt/pshe"
+              data-color-scheme="no-preference: dark; light: light; dark: dark;" data-icon="octicon-star"
+              data-show-count="true" aria-label="Star danakt/pshe on GitHub">Star</a>
+          </div>
 
-          <section class="terminal">
-            <div class="first-prompt">
-              $&nbsp;<span class="promt" data-text="пше сщььше -ь Эштшешфд сщььшеЭ"></span><span
-                class="typing-cursor">|</span>
-            </div>
-
-            <div class="output">
-              <div>$ git commit -m "initial commit"</div>
-              <div>&nbsp;</div>
-              <div>On branch master</div>
-              <div>Your branch is up to date with 'origin/master'.</div>
-              <div>&nbsp;</div>
-              <div>nothing to commit, working tree clean</div>
-            </div>
-
-            <div class="second-prompt">
-              $&nbsp;<span class="promt"></span><span class="typing-cursor">|</span>
-            </div>
-          </section>
+          <div class="copyright">
+            <a href="https://github.com/danakt/pshe/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">MIT
+            </a> © <a href="https://danakt.com" target="_blank">Данакт Ф.</a>, 2020
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </footer>
+  </main>
 
-
-  <script src="./script.js">
-  </script>
 
   <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; width: 0; height: 0" aria-hidden="true">
     <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210.1 210.1" id="copy">
       <path
         d="M168.5 0H80.2C67.4 0 57 10.4 57 23.3v2.9h-15.4c-12.8 0-23.3 10.4-23.3 23.3v137.5c0 12.8 10.4 23.3 23.3 23.3h88.3c12.8 0 23.3-10.4 23.3-23.3V184h15.4c12.8 0 23.3-10.4 23.3-23.3V23.3C191.8 10.4 181.3 0 168.5 0zM138.1 186.9c0 4.6-3.7 8.3-8.3 8.3H41.6c-4.6 0-8.3-3.7-8.3-8.3V49.4c0-4.6 3.7-8.3 8.3-8.3h88.3c4.6 0 8.3 3.7 8.3 8.3V186.9zM176.8 160.7c0 4.6-3.7 8.3-8.3 8.3h-15.4V49.4c0-12.8-10.4-23.3-23.3-23.3H72v-2.9c0-4.6 3.7-8.3 8.3-8.3h88.3c4.6 0 8.3 3.7 8.3 8.3V160.7z"
-        fill="#fff" />
+        fill="currentColor" />
     </symbol>
   </svg>
 
+  <script src="./script.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(62101204, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+  </script>
+
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/62101204" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
 </body>
 
 </html>
