@@ -1,0 +1,264 @@
+:root {
+  --bg-color: #151515;
+  --text-color: #fff;
+  --code-bg-color: #000;
+  --terminal-header-color: #e0e8f0;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 16px;
+}
+
+.main-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .main-wrapper {
+    display: block;
+    margin: 10px;
+  }
+}
+
+.main-block {
+  width: 1000px;
+  display: flex;
+}
+
+@media screen and (max-width: 1000px) {
+  .main-block {
+    flex-wrap: wrap;
+  }
+}
+
+.main-left {
+  margin: 20px;
+  flex: 0 0 50%;
+  margin-right: 50px;
+}
+
+.main-right {
+  margin: 20px;
+  flex: 0 0 50%;
+}
+
+@media screen and (max-width: 1000px) {
+  .main-left,
+  .main-right {
+    flex: 0 0 100%;
+  }
+}
+
+.tagline {
+  margin-top: 0;
+  line-height: 1em;
+  letter-spacing: -0.05rem;
+  font-weight: 700;
+  font-size: 64px;
+  margin-bottom: 30px;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.7em;
+  margin-bottom: 40px;
+}
+
+.installation-wrapper {
+  display: inline-block;
+}
+
+.installation {
+  font-size: 18px;
+  border-radius: 8px;
+  background: var(--code-bg-color);
+  position: relative;
+  display: flex;
+  width: auto;
+  padding: 0 5px;
+  line-height: 21px;
+}
+
+.installation code {
+  padding: 10px 5px;
+}
+
+.copy-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.copy-button:hover {
+  opacity: 1;
+}
+
+.copy-button svg {
+  height: 16px;
+  width: 16px;
+}
+
+.copied-hint {
+  position: absolute;
+  background-color: var(--code-bg-color);
+  left: calc(100% + 15px);
+  padding: 10px 5px;
+  top: 50%;
+  transform: translate(-5px, -50%);
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 8px;
+  transition: 0.3s ease-out;
+  transition-property: opacity, visibility, transform;
+  line-height: 21px;
+}
+
+.copied-hint::before {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-style: solid;
+  border-width: 7px 8px 7px 0;
+  border-color: transparent var(--code-bg-color) transparent transparent;
+}
+
+.copied-hint.showed {
+  transform: translate(0, -50%);
+  opacity: 1;
+  visibility: visible;
+}
+
+.terminal-window {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  height: 300px;
+  background: var(--code-bg-color);
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+.terminal-window header {
+  background: var(--terminal-header-color);
+  height: 30px;
+  border-radius: 8px 8px 0 0;
+  padding-left: 10px;
+}
+
+.terminal-window header .button {
+  width: 12px;
+  height: 12px;
+  margin: 10px 4px 0 0;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+.terminal-window header .button.green {
+  background: #3bb662;
+}
+
+.terminal-window header .button.yellow {
+  background: #e5c30f;
+}
+
+.terminal-window header .button.red {
+  background: #e75448;
+}
+
+.terminal-window section.terminal {
+  color: var(--text-color);
+  font-family: var(--font-mono);
+  padding: 10px;
+  position: absolute;
+  width: 100%;
+  top: 30px;
+  bottom: 0;
+  overflow: auto;
+}
+
+.terminal-window section.terminal .typing-cursor {
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+
+.output {
+  opacity: 0.4;
+}
+
+.output div {
+  display: none;
+}
+
+.second-prompt {
+  display: none;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
