@@ -137,6 +137,13 @@ section.main-wrapper {
   margin-bottom: 30px;
 }
 
+@media screen and (max-width: 1000px) {
+  .tagline {
+    margin-top: 20px;
+    font-size: 40px;
+  }
+}
+
 .description {
   font-size: 18px;
   line-height: 1.7em;
@@ -145,9 +152,6 @@ section.main-wrapper {
 
 .installation-wrapper {
   display: inline-block;
-}
-
-@media screen and (max-width: 1000px) {
 }
 
 .installation {
